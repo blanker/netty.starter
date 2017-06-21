@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket客户端</title>
+</head>
+<body>
+    <form onsubmit="return false;">
+        <textarea name="message" style="width: 400px; height: 300px;"></textarea>
+        <input type="button" value="send data" onclick="send_data(this.form.message.value)">
+        <h3>服务器端输出：</h3>
+        <textarea id="responseText" style="width: 400px; height: 300px;"></textarea>
+        <input type="button" onclick="javascript:document.getElementById('responseText').value='';" value="clear">
+    </form>
+</body>
+<script type="text/javascript">
+    var socket;
+
+    //document.onload = function(){
+        if (window.WebSocket) {
+            socket = new WebSocket("ws://localhost:8899/ws");
+            socket.onmessage = function(event){
+                document.getElementById('responseText').value = document.getElementById('responseText').value + "\n" + event.data;
+            };
+            socket.onopen = function(event) {
+                document.getElementById('responseText').value = "connection opened";
+            };
+            socket.onclose = function(event){
+                document.getElementById('responseText').value = document.getElementById('responseText').value + "\nconnection closed";
+            };
+        } else {
+            alert("浏览器不支持WebSocket");
+        }
+   // };
+
+    function send_data(message){
+        if (!window.WebSocket) { return;}
+
+        console.log(socket.readyState);
+        console.log(WebSocket.OPEN);
+        if (socket.readyState == WebSocket.OPEN) {
+            socket.send(message);
+        } else {
+            alert("connection is not open.");
+        }
+    }
+</script>
+</html>
