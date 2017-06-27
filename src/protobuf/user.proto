@@ -1,7 +1,7 @@
 syntax =  "proto2";
 
 option optimize_for = SPEED;
-option java_package = "com.dongbawen.protobuf";
+option java_package = "com.dongbawen.netty.starter.the6th";
 option java_outer_classname = "MyProtoBuf";
 
 message User {
