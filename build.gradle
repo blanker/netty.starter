@@ -8,7 +8,9 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
+    mavenLocal()
     mavenCentral()
+    //jcenter()
 }
 
 dependencies {
@@ -23,6 +25,8 @@ dependencies {
         "io.grpc:grpc-stub:1.4.0"
     )
 
+    compile("us.codecraft:webmagic-core:0.7.2")
+    compile("us.codecraft:webmagic-extension:0.7.2")
 }
 
 buildscript {
