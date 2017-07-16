@@ -39,6 +39,42 @@ public final class StudentServiceGrpc {
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
               com.dongbawen.proto.MyResponse.getDefaultInstance()))
           .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<com.dongbawen.proto.MyRequest,
+      com.dongbawen.proto.MyResponseList> METHOD_GET_SOME_LIST_BY_USERNAMES =
+      io.grpc.MethodDescriptor.<com.dongbawen.proto.MyRequest, com.dongbawen.proto.MyResponseList>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+          .setFullMethodName(generateFullMethodName(
+              "com.dongbawen.proto.StudentService", "GetSomeListByUsernames"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.dongbawen.proto.MyRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.dongbawen.proto.MyResponseList.getDefaultInstance()))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<com.dongbawen.proto.MyRequest,
+      com.dongbawen.proto.MyResponse> METHOD_GET_SOME_STREAM =
+      io.grpc.MethodDescriptor.<com.dongbawen.proto.MyRequest, com.dongbawen.proto.MyResponse>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+          .setFullMethodName(generateFullMethodName(
+              "com.dongbawen.proto.StudentService", "GetSomeStream"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.dongbawen.proto.MyRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.dongbawen.proto.MyResponse.getDefaultInstance()))
+          .build();
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static final io.grpc.MethodDescriptor<com.dongbawen.proto.MyRequest,
+      com.dongbawen.proto.MyResponse> METHOD_GET_SOME_STREAM_BY_STREAM =
+      io.grpc.MethodDescriptor.<com.dongbawen.proto.MyRequest, com.dongbawen.proto.MyResponse>newBuilder()
+          .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+          .setFullMethodName(generateFullMethodName(
+              "com.dongbawen.proto.StudentService", "GetSomeStreamByStream"))
+          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.dongbawen.proto.MyRequest.getDefaultInstance()))
+          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+              com.dongbawen.proto.MyResponse.getDefaultInstance()))
+          .build();
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -74,6 +110,27 @@ public final class StudentServiceGrpc {
       asyncUnimplementedUnaryCall(METHOD_GET_REAL_NAME_BY_USERNAME, responseObserver);
     }
 
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.dongbawen.proto.MyRequest> getSomeListByUsernames(
+        io.grpc.stub.StreamObserver<com.dongbawen.proto.MyResponseList> responseObserver) {
+      return asyncUnimplementedStreamingCall(METHOD_GET_SOME_LIST_BY_USERNAMES, responseObserver);
+    }
+
+    /**
+     */
+    public void getSomeStream(com.dongbawen.proto.MyRequest request,
+        io.grpc.stub.StreamObserver<com.dongbawen.proto.MyResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_GET_SOME_STREAM, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.dongbawen.proto.MyRequest> getSomeStreamByStream(
+        io.grpc.stub.StreamObserver<com.dongbawen.proto.MyResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(METHOD_GET_SOME_STREAM_BY_STREAM, responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -83,6 +140,27 @@ public final class StudentServiceGrpc {
                 com.dongbawen.proto.MyRequest,
                 com.dongbawen.proto.MyResponse>(
                   this, METHODID_GET_REAL_NAME_BY_USERNAME)))
+          .addMethod(
+            METHOD_GET_SOME_LIST_BY_USERNAMES,
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                com.dongbawen.proto.MyRequest,
+                com.dongbawen.proto.MyResponseList>(
+                  this, METHODID_GET_SOME_LIST_BY_USERNAMES)))
+          .addMethod(
+            METHOD_GET_SOME_STREAM,
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.dongbawen.proto.MyRequest,
+                com.dongbawen.proto.MyResponse>(
+                  this, METHODID_GET_SOME_STREAM)))
+          .addMethod(
+            METHOD_GET_SOME_STREAM_BY_STREAM,
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                com.dongbawen.proto.MyRequest,
+                com.dongbawen.proto.MyResponse>(
+                  this, METHODID_GET_SOME_STREAM_BY_STREAM)))
           .build();
     }
   }
@@ -112,6 +190,30 @@ public final class StudentServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(METHOD_GET_REAL_NAME_BY_USERNAME, getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.dongbawen.proto.MyRequest> getSomeListByUsernames(
+        io.grpc.stub.StreamObserver<com.dongbawen.proto.MyResponseList> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(METHOD_GET_SOME_LIST_BY_USERNAMES, getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public void getSomeStream(com.dongbawen.proto.MyRequest request,
+        io.grpc.stub.StreamObserver<com.dongbawen.proto.MyResponse> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(METHOD_GET_SOME_STREAM, getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.dongbawen.proto.MyRequest> getSomeStreamByStream(
+        io.grpc.stub.StreamObserver<com.dongbawen.proto.MyResponse> responseObserver) {
+      return asyncBidiStreamingCall(
+          getChannel().newCall(METHOD_GET_SOME_STREAM_BY_STREAM, getCallOptions()), responseObserver);
+    }
   }
 
   /**
@@ -137,6 +239,14 @@ public final class StudentServiceGrpc {
     public com.dongbawen.proto.MyResponse getRealNameByUsername(com.dongbawen.proto.MyRequest request) {
       return blockingUnaryCall(
           getChannel(), METHOD_GET_REAL_NAME_BY_USERNAME, getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.dongbawen.proto.MyResponse> getSomeStream(
+        com.dongbawen.proto.MyRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), METHOD_GET_SOME_STREAM, getCallOptions(), request);
     }
   }
 
@@ -168,6 +278,9 @@ public final class StudentServiceGrpc {
   }
 
   private static final int METHODID_GET_REAL_NAME_BY_USERNAME = 0;
+  private static final int METHODID_GET_SOME_STREAM = 1;
+  private static final int METHODID_GET_SOME_LIST_BY_USERNAMES = 2;
+  private static final int METHODID_GET_SOME_STREAM_BY_STREAM = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -190,6 +303,10 @@ public final class StudentServiceGrpc {
           serviceImpl.getRealNameByUsername((com.dongbawen.proto.MyRequest) request,
               (io.grpc.stub.StreamObserver<com.dongbawen.proto.MyResponse>) responseObserver);
           break;
+        case METHODID_GET_SOME_STREAM:
+          serviceImpl.getSomeStream((com.dongbawen.proto.MyRequest) request,
+              (io.grpc.stub.StreamObserver<com.dongbawen.proto.MyResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -200,6 +317,12 @@ public final class StudentServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_GET_SOME_LIST_BY_USERNAMES:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.getSomeListByUsernames(
+              (io.grpc.stub.StreamObserver<com.dongbawen.proto.MyResponseList>) responseObserver);
+        case METHODID_GET_SOME_STREAM_BY_STREAM:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.getSomeStreamByStream(
+              (io.grpc.stub.StreamObserver<com.dongbawen.proto.MyResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -224,6 +347,9 @@ public final class StudentServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new StudentServiceDescriptorSupplier())
               .addMethod(METHOD_GET_REAL_NAME_BY_USERNAME)
+              .addMethod(METHOD_GET_SOME_LIST_BY_USERNAMES)
+              .addMethod(METHOD_GET_SOME_STREAM)
+              .addMethod(METHOD_GET_SOME_STREAM_BY_STREAM)
               .build();
         }
       }

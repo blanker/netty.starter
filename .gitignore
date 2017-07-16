@@ -1,0 +1,5 @@
+build/**
+.idea/**
+.gradle/*
+user-data.bin
+phantomjsdriver.log

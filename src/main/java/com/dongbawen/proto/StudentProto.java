@@ -24,6 +24,11 @@ public final class StudentProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_dongbawen_proto_MyResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_dongbawen_proto_MyResponseList_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_dongbawen_proto_MyResponseList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -35,11 +40,20 @@ public final class StudentProto {
     java.lang.String[] descriptorData = {
       "\n\rStudent.proto\022\023com.dongbawen.proto\"\035\n\t" +
       "MyRequest\022\020\n\010username\030\001 \001(\t\"\036\n\nMyRespons" +
-      "e\022\020\n\010realname\030\002 \001(\t2l\n\016StudentService\022Z\n" +
-      "\025GetRealNameByUsername\022\036.com.dongbawen.p" +
-      "roto.MyRequest\032\037.com.dongbawen.proto.MyR" +
-      "esponse\"\000B%\n\023com.dongbawen.protoB\014Studen" +
-      "tProtoP\001b\006proto3"
+      "e\022\020\n\010realname\030\002 \001(\t\"?\n\016MyResponseList\022-\n" +
+      "\004list\030\001 \003(\0132\037.com.dongbawen.proto.MyResp" +
+      "onse2\205\003\n\016StudentService\022Z\n\025GetRealNameBy" +
+      "Username\022\036.com.dongbawen.proto.MyRequest" +
+      "\032\037.com.dongbawen.proto.MyResponse\"\000\022a\n\026G" +
+      "etSomeListByUsernames\022\036.com.dongbawen.pr" +
+      "oto.MyRequest\032#.com.dongbawen.proto.MyRe" +
+      "sponseList\"\000(\001\022T\n\rGetSomeStream\022\036.com.do",
+      "ngbawen.proto.MyRequest\032\037.com.dongbawen." +
+      "proto.MyResponse\"\0000\001\022^\n\025GetSomeStreamByS" +
+      "tream\022\036.com.dongbawen.proto.MyRequest\032\037." +
+      "com.dongbawen.proto.MyResponse\"\000(\0010\001B%\n\023" +
+      "com.dongbawen.protoB\014StudentProtoP\001b\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -65,6 +79,12 @@ public final class StudentProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_dongbawen_proto_MyResponse_descriptor,
         new java.lang.String[] { "Realname", });
+    internal_static_com_dongbawen_proto_MyResponseList_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_dongbawen_proto_MyResponseList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_dongbawen_proto_MyResponseList_descriptor,
+        new java.lang.String[] { "List", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
