@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 @Test
-public class firsttestngfile {
+public class FirstTestngFile {
     public String baseUrl = "http://newtours.demoaut.com/";
     public WebDriver driver;
     public String expected = null;
