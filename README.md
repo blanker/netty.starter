@@ -1,4 +1,8 @@
+[![Build Status](https://grpc-testing.appspot.com/job/gRPC_master/badge/icon)](https://grpc-testing.appspot.com/job/gRPC_master)
+
 # Netty Starter Project
+===================
+
 
 * Hello Netty
 * Hello RPC
@@ -27,3 +31,15 @@ public class HelloWorld {
     }
 }
 ```
+
+### 涉及到的技术有
+=============
+
+| Java 技术 | 说明                  |
+|-----------|-------------          |
+|Netty      |NIO框架                |
+|gRPC       |Google开源的RPC框架    |
+|ProtoBuf   |Google开源的老版RPC框架|
+|Thrift     |Facebook开源的RPC框架  |
+|WebSocket  |基于Http协议的网络协议 |
+|Gradle     |Maven的下一代构建工具  |
