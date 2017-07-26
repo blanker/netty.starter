@@ -42,6 +42,12 @@ dependencies {
     compile("org.seleniumhq.selenium:selenium-server:3.4.0") {
         exclude group: 'org.seleniumhq.selenium', module: 'selenium-htmlunit-driver' //by both name and group
     }
+    compile 'org.apache.poi:poi:3.16'
+    compile 'org.apache.poi:poi-ooxml:3.16'
+
+    compile 'net.sourceforge.jexcelapi:jxl:2.6.12'
+
+
     // https://mvnrepository.com/artifact/org.testng/testng
     testCompile group: 'org.testng', name: 'testng', version: '6.11'
 
