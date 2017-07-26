@@ -1,8 +1,4 @@
-[![Build Status](https://grpc-testing.appspot.com/job/gRPC_master/badge/icon)](https://grpc-testing.appspot.com/job/gRPC_master)
-
 # Netty Starter Project
-===================
-
 
 * Hello Netty
 * Hello RPC
@@ -32,8 +28,9 @@ public class HelloWorld {
 }
 ```
 
+
 ### 涉及到的技术有
-=============
+
 
 | Java 技术 | 说明                  |
 |-----------|-------------          |
